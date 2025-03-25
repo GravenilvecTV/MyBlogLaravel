@@ -12,8 +12,8 @@
     @if ($nbArticles == 0)
         <p>Il n'y aucun article</p>
     @else
-        @foreach ($articles as $titrearticle)
-            <a href='/article/1'>{{ $titrearticle }}</a><br>
+        @foreach ($articles as $a)
+            <a href='/article/{{ $a->id }}'>{{ $a->title }}</a><br>
         @endforeach
     @endif
 </body>

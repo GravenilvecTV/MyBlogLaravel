@@ -6,8 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Mon article n°{{ $numeroArticle }}</h1>
-    <p>Voici le contenu de l'article, blablabla</p>
+    <h1>{{ $article->title }}</h1>
+    <p>{{ $article->content }}</p>
     <img src="https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg" alt="">
 </body>
 </html>

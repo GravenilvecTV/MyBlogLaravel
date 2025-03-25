@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -8,11 +9,11 @@ Route::get('/', function () {
 
 // Affiche un article specifique grace à son numero
 Route::get('/article/{id}', function (string $id) {
-    return view('article', ['numeroArticle' => $id]);
+    return view('article', ['article' => Post::find($id)]);
 });
 
 Route::get('/articles', function () { 
-    $articles = ["Python devient payant", "Goldenboy devient president", "Timothée rachete internet"];
+    $articles = Post::all();
     $nbArticles = count($articles);
     $nomDuBlog = "Blogito";
     $context = [
